@@ -34,7 +34,7 @@ const Register = () => {
 
     if (password === vpassword) {
 
-      axios.post('/auth/login', {
+      axios.post('/auth/register', {
         email: email,
         password: password,
       })
@@ -62,7 +62,9 @@ const Register = () => {
         label="Email"
         type="email"
         // value while testing
+        // value="test@tst.com"
         value="test@test.com"
+        // value="ende@test.com"
         placeholder="Email"
       ></TextField>
       <TextField
