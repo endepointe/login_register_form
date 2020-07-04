@@ -1,0 +1,20 @@
+{
+  "name": "dbadmin",
+  "version": "1.0.0",
+  "description": "dbadmin",
+  "main": "dbadmin.js",
+  "scripts": {
+    "client": "cd ../client && npm start",
+    "server": "nodemon dbadmin",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "dbadmin"
+  ],
+  "author": "endepointe",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "concurrently": "^5.2.0"
+  }
+}
