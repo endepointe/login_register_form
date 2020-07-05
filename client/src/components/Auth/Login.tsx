@@ -31,6 +31,17 @@ const Login = () => {
     })
       .then((res) => {
         console.log(res);
+        if (res.data.status === 1) {
+          // success
+          console.log(res.data.msg);
+          // render admin page
+        }
+        if (res.data.status === 0) {
+          console.log(res.data.msg);
+        }
+        if (res.data.status === 2) {
+          console.log(res.data.msg);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -50,7 +61,12 @@ const Login = () => {
         label="Email"
         type="email"
         // value while testing
-        value="test@test.com"
+        // value="test@tst.com"
+        // value="does@not.exist"
+        // value="test@test.com"
+        value="endepointe@gmail.com"
+        // value="ende@ende.com"
+        // value="ende@test.com"
         placeholder="Email"
       ></TextField>
       <TextField
@@ -60,7 +76,8 @@ const Login = () => {
         required
         label="Password"
         // value while testing
-        value="1234567"
+        value="1bs2b3bd1"
+        // value="invalidpassword"
         type="password"
         placeholder="Password"
       ></TextField>

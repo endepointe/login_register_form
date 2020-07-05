@@ -26,20 +26,23 @@ const Register = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log('logging in');
 
     let email: string = e.target.elements.email.value;
     let password: string = e.target.elements.password.value;
     let vpassword: string = e.target.elements.verify_password.value;
 
     if (password === vpassword) {
-
       axios.post('/auth/register', {
         email: email,
         password: password,
       })
         .then((res) => {
-          console.log(res);
+          if (res.data.status === 1) {
+            console.log(res.data.msg);
+          }
+          if (res.data.status === 0) {
+            console.log(res.data.msg);
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -62,8 +65,9 @@ const Register = () => {
         label="Email"
         type="email"
         // value while testing
-        // value="test@tst.com"
-        value="test@test.com"
+        // value="test@test.com"
+        // value="endepointe@gmail.com"
+        value="ende@ende.com"
         // value="ende@test.com"
         placeholder="Email"
       ></TextField>
